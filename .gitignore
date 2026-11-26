@@ -1,0 +1,53 @@
+# Python virtual environment
+venv/
+env/
+.venv/
+
+# Python cache
+__pycache__/
+*.py[cod]
+*$py.class
+
+# IDE settings
+.vscode/
+.idea/
+
+# Audio files (personal files)
+audio/*
+!audio/.gitkeep
+
+# Transcription output
+output/*
+!output/.gitkeep
+
+# Temporary audio chunks
+temp_chunks/
+
+# Downloaded AI models / cache
+models/
+.cache/
+.whisper/
+
+# Environment variables and secrets
+.env
+.env.*
+
+# OS files
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Logs
+*.log
+
+# Python testing cache
+.pytest_cache/
+
+# Local databases
+*.sqlite3
+*.db
+
+# Python packaging
+build/
+dist/
+*.egg-info/
