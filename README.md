@@ -61,6 +61,8 @@ Whisper-project/
 └── .gitignore
 ```
 
+> `venv/` and `temp_chunks/` are local folders. They are not uploaded to GitHub (they are listed in `.gitignore`). `temp_chunks/` is created automatically while the script runs and is deleted after processing.
+
 ## 🚀 Installation
 
 ### 1. Clone the repository
@@ -232,6 +234,38 @@ HINGLISH AUDIO TRANSCRIPTION
 अगले audio chunk का transcription यहां आएगा।
 ```
 
+## 🧪 Running Tests
+
+The tests check for the audio file, the output folder and the generated transcription file. Because of this, run the transcription at least once before running the tests.
+
+1. Place your audio file at `audio/my_audio.mp3`.
+2. Run the transcription:
+
+```powershell
+python transcribe.py
+```
+
+3. Run the tests from the project root folder:
+
+```powershell
+python -m unittest discover -s tests -v
+```
+
+**Expected output:**
+
+```text
+test_audio_file_exists ... ok
+test_output_folder_exists ... ok
+test_transcription_file_exists ... ok
+test_transcription_not_empty ... ok
+
+Ran 4 tests
+
+OK
+```
+
+**Note:** The tests only verify that the required files and folders exist. They do not run the actual audio transcription. The audio file and the transcription file are not uploaded to GitHub (they are listed in `.gitignore`), so the tests will fail on a fresh clone until you add an audio file and run `transcribe.py`.
+
 ## 🔒 Privacy
 
 - Audio is processed locally on your computer.
@@ -246,6 +280,8 @@ HINGLISH AUDIO TRANSCRIPTION
 - Systems with 4 GB RAM may experience memory limitations.
 - Hinglish accuracy depends on audio quality, background noise and pronunciation.
 - Hindi language selection may not perfectly recognize every English word.
+- Output is written in Devanagari (Hindi) script because the language is fixed to Hindi. English words may also appear in Devanagari.
+- The BASE model is fast but its Hindi accuracy is limited. For better accuracy, try `MODEL_SIZE = "small"` in `transcribe.py` (it will be slower).
 - Longer audio files require more processing time.
 - The first execution requires an internet connection to download the model.
 
