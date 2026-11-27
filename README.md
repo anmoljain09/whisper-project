@@ -1,4 +1,3 @@
-
 # 🎙️ Hinglish Audio Transcription
 
 Convert Hindi + English mixed audio into text using **Faster-Whisper**.
@@ -51,8 +50,10 @@ Whisper-project/
 ├── venv/
 │
 ├── transcribe.py
+├── pyproject.toml
 ├── requirements.txt
 ├── README.md
+├── LICENSE
 └── .gitignore
 ```
 
@@ -79,10 +80,24 @@ python -m venv venv
 venv\Scripts\activate
 ```
 
-### 4. Install Python dependencies
+### 4. Install and Verify Python Dependencies
+
+Install the required Python dependencies:
 
 ```bash
 pip install -r requirements.txt
+```
+
+Verify installation (e.g., Faster-Whisper):
+
+```powershell
+python -c "from faster_whisper import WhisperModel; print('Faster-Whisper installed successfully!')"
+```
+
+If the installation is successful, you will see:
+
+```text
+Faster-Whisper installed successfully!
 ```
 
 ### 5. Install FFmpeg
@@ -113,6 +128,46 @@ AUDIO_FILE = "audio/my_audio.mp3"
 ```
 
 If your audio file has a different name, update the `AUDIO_FILE` variable in `transcribe.py`.
+
+## 🔁 How to Run Again After Closing VS Code
+
+After completing the initial setup, you do not need to install dependencies or download the model again.
+
+Whenever you close VS Code or restart your PC, follow these steps to run the project again.
+
+### 1. Open the Project in VS Code
+
+Open your `whisper-project` folder in VS Code.
+
+### 2. Activate the Virtual Environment
+
+Open the VS Code terminal (PowerShell) and run:
+
+```powershell
+.\venv\Scripts\Activate.ps1
+```
+
+### 3. Verify Faster-Whisper Installation (Optional)
+
+To check whether Faster-Whisper is installed correctly, run:
+
+```powershell
+python -c "from faster_whisper import WhisperModel; print('Faster-Whisper installed successfully!')"
+```
+
+### 4. Run the Transcription Script
+
+```powershell
+python transcribe.py
+```
+
+**Important Notes:**
+
+- Activate the virtual environment every time you open a new VS Code terminal.
+- You do not need to reinstall Python dependencies every time.
+- You do not need to download the Whisper model again once it has been downloaded.
+- Simply activate `venv` and run `transcribe.py` to start transcription again.
+- Make sure your audio file is available in the `audio` folder.
 
 ## ▶️ Run Transcription
 

@@ -1,3 +1,5 @@
+# .\venv\Scripts\Activate.ps1
+# python -c "from faster_whisper import WhisperModel; print('Faster-Whisper installed successfully!')"
 # python transcribe.py
 
 from faster_whisper import WhisperModel
