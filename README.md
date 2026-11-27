@@ -25,6 +25,7 @@ A free, offline, API-key-free audio transcription project built with Python. It 
 - CTranslate2
 - FFmpeg
 - FFprobe
+- unittest
 
 ## 💻 System Requirements
 
@@ -46,6 +47,9 @@ Whisper-project/
 │   └── transcription.txt
 │
 ├── temp_chunks/
+│
+├── tests/
+│   └── test_transcribe.py
 │
 ├── venv/
 │
